@@ -13,7 +13,7 @@
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContextPool<OdeToFoodDbContext>(options =>
+            services.AddSingleton<IR>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("OdeToFoodDb"));
             });
