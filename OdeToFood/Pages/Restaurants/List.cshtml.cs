@@ -1,12 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
 
 namespace OdeToFood.Pages.Restarurants
 {
     public class ListModel : PageModel
     {
-        public void OnGet()
+        private readonly IConfiguration config;
+        public string Message { get; set; }
+
+        public ListModel(IConfiguration config)
         {
+            this.config = config;
+        }
+
+         public void OnGet()
+        {
+            Message = config["Message"];
         }
     }
 }
