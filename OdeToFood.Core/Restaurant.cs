@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace OdeToFood.Core
 {
-
     public class Restaurant
     {
         public int Id { get; set; }
