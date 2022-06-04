@@ -1,9 +1,7 @@
 ﻿using OdeToFood.Core;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OdeToFood.Core;
+using System.Collections.Generic;
 
 namespace OdeToFood.Data
 {
@@ -31,7 +29,10 @@ namespace OdeToFood.Data
 
         IEnumerable<Restaurant> IRestaurantData.GetRestaurantsByName(string name)
         {
-            throw new NotImplementedException();
-        }
+            return from r in restaurants
+                   where string.IsNullOrEmpty(name) || r.Name.StartsWith(name)
+                   orderby r.Name
+                   select r;
+        }     
     }
 }
