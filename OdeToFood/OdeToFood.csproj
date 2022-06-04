@@ -7,7 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Restaurants\Detail.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\OdeToFood.Data\OdeToFood.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Restaurants\Detail.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Restaurants\Detail.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Restaurants\Detail.cshtml" />
   </ItemGroup>
 
 </Project>

@@ -1,12 +1,12 @@
 ﻿using OdeToFood.Core;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace OdeToFood.Data
 {
-    public interface IRestaurantData
-    {
-        IEnumerable<Restaurant> GetRestaurantsByName(string name);
-    }
-
     public class InMemoryRestaurantData : IRestaurantData
     {
         List<Restaurant> restaurants;
@@ -26,7 +26,12 @@ namespace OdeToFood.Data
             return from r in restaurants
                    where string.IsNullOrEmpty(name) || r.Name.StartsWith(name)
                    orderby r.Name
-                   select r;  
+                   select r;
+        }
+
+        IEnumerable<Restaurant> IRestaurantData.GetRestaurantsByName(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }
